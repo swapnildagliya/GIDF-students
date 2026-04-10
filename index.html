@@ -205,9 +205,9 @@ const ACTS = [
   { num:1,  performer:"Bollywood 2",             style:"Bollywood",       song:"Morya Re",                              fmt:"Group",    groups:["bb2"],                                    costume:"Pink & blue layered skirts, multicolor blouses",     note:"Opening act! Curtain opens with the music.", photo:"bollywood", exitCue:"Students exit after last pose — lights stay on. Swapnil picks up mic for live welcome.", star:false },
   { num:2,  performer:"Opening Party Performer 1",style:"TBD",            song:"TBD",                                   fmt:"Solo",     groups:[],                                         costume:"TBD",                                                note:"Guest performer", exitCue:"TBD", star:false },
   { num:3,  performer:"Desihop",                 style:"Desi Fusion",     song:"TBD",                                   fmt:"Group",    groups:[],                                         costume:"TBD",                                                note:"Guest artists", exitCue:"TBD", star:false },
-  { num:4,  performer:"Bollyfolk",               style:"Ghoomar",         song:"Jalalo Bilalo / Savariya Parnaye",      fmt:"Group",    groups:["folk"],                                   costume:"Multicolor mirrorwork",                              note:"Entry from off-stage wings as music starts.", photo:"ghoomar", exitCue:"Exit is part of the music — choreographed exit while music plays", star:false },
+  { num:4,  performer:"Bollyfolk",               style:"Ghoomar",         song:"Jalalo Bilalo / Savariya Parnaye",      fmt:"Group",    groups:["folk"],                                   costume:"Multicolor mirrorwork",                              note:"Entry from off-stage wings as music starts.", photo:"ghoomar", exitCue:"Exit is part of the music — choreographed exit while music plays", star:false, prop:"Loom (provided) — make sure you are wearing it before you go on stage." },
   { num:5,  performer:"Manasi",                  style:"Punjabi Folk",    song:"Giddha",                                fmt:"Solo",     groups:[],                                         costume:"TBD",                                                note:"", exitCue:"TBD", star:false },
-  { num:6,  performer:"Bollyfolk",               style:"Tippani",         song:"O Re Kanchi",                           fmt:"Group",    groups:["folk"],                                   costume:"Multicolor mirrorwork",                              note:"", photo:"ghoomar", exitCue:"Exit is part of the music — choreographed exit while music plays", star:false },
+  { num:6,  performer:"Bollyfolk",               style:"Tippani",         song:"O Re Kanchi",                           fmt:"Group",    groups:["folk"],                                   costume:"Multicolor mirrorwork",                              note:"", photo:"ghoomar", exitCue:"Exit is part of the music — choreographed exit while music plays", star:false, prop:"Remove the Loom before this performance — take it off during the Act 5 buffer." },
   { num:7,  performer:"Opening Party Performer 2",style:"TBD",            song:"TBD",                                   fmt:"Solo",     groups:[],                                         costume:"TBD",                                                note:"Guest performer", exitCue:"TBD", star:false },
   { num:8,  performer:"ABC",                     style:"Lavani Fusion",   song:"Choli Ke Peeche Kya Hai",               fmt:"Group",    groups:["abc"],                                    costume:"Boho multicolor + black top",                        note:"", photo:"choli", exitCue:"Exit in blackout", star:false },
   { num:9,  performer:"Bhangra",                 style:"Bhangra",         song:"Insane Bhangra Mashup / Tere Long Da",  fmt:"Group",    groups:["bhangra"],                                costume:"Yellow & green",                                     note:"2-song medley. Pascale exits after Song 1. Swapnil, Laura & Charlotte join Song 2.", photo:"bhangra", exitCue:"Exit is part of the music — choreographed exit while music plays", star:false },
@@ -218,7 +218,7 @@ const ACTS = [
   { num:14, performer:"ABC",                     style:"Bollywood",       song:"Ghar More Pardesiya",                   fmt:"Group",    groups:["abc"],                                    costume:"White anarkali",                                     note:"", photo:"gharmore", exitCue:"Exit in blackout", star:false },
   { num:15, performer:"Colleena",                style:"Rajasthani Folk", song:"TBD",                                   fmt:"Solo",     groups:[],                                         costume:"TBD",                                                note:"Possible live musician \u2014 same musician continues for Act 16 (Kalbeliya).", exitCue:"TBD", star:false },
   { num:16, performer:"Swapnil",                 style:"Kalbeliya",       song:"TBD",                                   fmt:"Solo",     groups:[],                                         costume:"TBD",                                                note:"Possible live musician shared with Colleena (Act 15).", photo:"kalbeliya", exitCue:"Exit after last pose — hard blackout", star:false },
-  { num:17, performer:"Madhuri Dixit Medley",    style:"Bollywood",       song:"Madhuri Dixit Medley",                  fmt:"Group",    groups:["bb2","bb3","abc"],                        costume:"Pink & blue layered skirts, multicolor blouses",     note:"Bollywood 2, Bollywood 3 & ABC.", photo:"bollywood", exitCue:"No exit — smooth transition into Grand Finale after last pose", star:false },
+  { num:17, performer:"Madhuri Dixit Medley",    style:"Bollywood",       song:"Madhuri Dixit Medley",                  fmt:"Group",    groups:["bb2","bb3","abc"],                        costume:"Pink & blue layered skirts, multicolor blouses",     note:"Bollywood 2, Bollywood 3 & ABC.", photo:"bollywood", exitCue:"No exit — smooth transition into Grand Finale after last pose", star:false, prop:"Dupattas (provided) — your prop for this performance. Make sure they are ready in your changing area before Act 17." },
   { num:18, performer:"Grand Finale",            style:null,              song:"TBD",                                   fmt:"Everyone", groups:["bb2","bb3","folk","bhangra","semi","abc"], costume:null,                                                 note:"Everyone on stage together!", exitCue:"House lights up — everyone stays on stage for bows. Swapnil takes mic. ABC closes curtain.", star:false }
 ];
 
@@ -466,6 +466,7 @@ function renderOrder() {
       <td>
         <div style="font-weight:600;color:#1A1A1A">${a.performer}${a.star?' <span class="star">\u2605</span>':''}${badge}</div>
         ${a.note?`<div style="font-size:11px;color:#999999;margin-top:2px">${a.note}</div>`:''}
+        ${a.prop?`<div style="font-size:11px;color:#b45309;margin-top:3px;font-weight:600">🎭 ${a.prop}</div>`:''}
       </td>
       <td style="color:#6B6B6B;font-size:12px">${a.style||'\u2014'}</td>
       <td style="color:#6B6B6B">${a.song||'\u2014'}</td>
@@ -504,6 +505,7 @@ function renderOrder() {
           <div style="font-size:12px;color:#333;line-height:1.4;flex:1">${a.costume||'\u2014'}${photoHtml}</div>
         </div>
         ${a.note ? `<div style="font-size:11px;color:#c07000;font-style:italic;padding:5px 10px;background:#fffbf0;border-left:3px solid #f5c842;border-radius:0 6px 6px 0">${a.note}</div>` : ''}
+        ${a.prop ? `<div style="font-size:11px;color:#92400e;font-weight:600;padding:5px 10px;background:#fffbeb;border-left:3px solid #f59e0b;border-radius:0 6px 6px 0;margin-top:2px">🎭 ${a.prop}</div>` : ''}
       </div>
     </div>`;
   }).join('');
@@ -610,6 +612,13 @@ function renderBring() {
   };
 
   const checkSections = [
+    {
+      icon:"\uD83C\uDFAD", heading:"Props \u2014 provided for you, but be aware!",
+      items:[
+        "<strong>Loom (Act 4 \u2014 Bollyfolk Ghoomar)</strong> \u2014 provided by Swapnil and will be ready for you backstage. Make sure you are wearing it before you go on stage, and remove it during Act 5 before Tippani.",
+        "<strong>Dupattas (Act 17 \u2014 Madhuri Dixit Medley)</strong> \u2014 also provided. These are your prop for the performance \u2014 make sure they are in your changing area and ready before Act 17."
+      ]
+    },
     {
       icon:"\u{1F9E6}", heading:"What to wear underneath \u2014 bring from home",
       items:["\u26AB <strong>Black leggings or tights</strong> \u2014 wear under Bollywood (Morya Re / Madhuri Medley), Bollyfolk, and Semi-Classical costumes","\u26AB <strong>Black shorts, cycling shorts, or black leggings pulled up to the knee</strong> \u2014 wear under Bhangra costume","\uD83E\uDE74 <strong>Slippers</strong> \u2014 to move around Shoonya between acts (no shoes in the studios \u2014 all performances are barefoot)"]
@@ -742,6 +751,7 @@ function renderChangeGuide() {
           <div style="font-size:13px;font-weight:600;color:#1A1A1A">${a.grp}</div>
           <div style="font-size:11px;color:#6B6B6B;margin-top:1px">Costume: ${a.costume}</div>
           ${a.note ? `<div style="font-size:11px;color:#c07000;margin-top:2px;font-style:italic">${a.note}</div>` : ''}
+          ${(()=>{ const ax=ACTS.find(x=>x.num===a.num); return ax&&ax.prop?`<div style="font-size:11px;color:#92400e;font-weight:600;margin-top:3px;padding:4px 8px;background:#fffbeb;border-left:3px solid #f59e0b;border-radius:0 5px 5px 0">🎭 ${ax.prop}</div>`:''; })()}
           ${arriveNote}
         </div>
       </div>`;
