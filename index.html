@@ -256,14 +256,15 @@ const REHEARSAL = [
 const PEOPLE = [
   {
     name:"Heidi",
-    role:"Bollywood 2 + Bollyfolk + Madhuri Medley",
+    role:"Bollywood 2 + Bollyfolk + Bhangra + Madhuri Medley",
     color:"#4A7C59",
-    note:"Bollywood 2 and Bollyfolk share different costumes. After Bollyfolk Tippani (Act 6), Heidi needs to change back into pink & blue skirts before Madhuri Medley (Act 17) \u2014 plenty of time (Acts 7\u201316).",
+    note:"4 costume changes. After Bollyfolk Tippani (Act 6), change into Bhangra (Acts 7 + 8 as buffer \u2014 comfortable). After Bhangra (Act 9), plenty of time to change into pink & blue skirts for Madhuri Medley (Acts 10\u201316).",
     acts:[
       { num:1,  grp:"Bollywood 2",              costume:"Pink & blue layered skirts, multicolor blouses", change:null },
       { num:4,  grp:"Bollyfolk \u2014 Ghoomar", costume:"Multicolor mirrorwork", change:{ after:1, window:"Acts 2 (OP1) + 3 (Desihop) \u2014 approx. 6 min", tight:false } },
       { num:6,  grp:"Bollyfolk \u2014 Tippani", costume:"Same mirrorwork",        change:null, sameAs:4 },
-      { num:17, grp:"Madhuri Dixit Medley",     costume:"Pink & blue layered skirts, multicolor blouses (same as Morya Re)", change:{ after:6, window:"Acts 7\u201316 (plenty of time to change back into pink & blue)", tight:false } },
+      { num:9,  grp:"Bhangra",                  costume:"Yellow & green",         change:{ after:6, window:"Act 7 (OP2) + Act 8 (Choli Ke Peeche) \u2014 comfortable", tight:false } },
+      { num:17, grp:"Madhuri Dixit Medley",     costume:"Pink & blue layered skirts, multicolor blouses", change:{ after:9, window:"Acts 10\u201316 (7 acts, plenty of time)", tight:false } },
       { num:18, grp:"Grand Finale",             costume:"Stay in Madhuri Medley costume", change:null }
     ]
   },
