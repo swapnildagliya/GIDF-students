@@ -127,6 +127,7 @@ tr.hl td:first-child{border-left:5px solid #C4581A;padding-left:10px}
   .hdr-title, .hdr-logo { color:#000 !important; font-size:14px !important; }
   .hdr-sub { color:#444 !important; font-size:11px !important; }
   .hdr-badge, .badge, .no-print { display:none !important; }
+  .print-only { display:block !important; }
   .nav { display:none !important; }
   .teacher-nav { display:none !important; }
   .print-btn { display:none !important; }
@@ -809,16 +810,32 @@ function renderChangeGuide() {
     </div>`;
   }).join('');
 
+  const printBtn = activePerson !== 'all'
+    ? `<div class="no-print" style="margin-bottom:18px">
+        <button onclick="window.print()" style="background:#C4581A;color:#fff;border:none;border-radius:8px;padding:9px 20px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit">🖨 Print ${activePerson}'s Change Guide</button>
+        <span style="font-size:12px;color:#999;margin-left:12px">Prints just this person's card — clean A4</span>
+      </div>`
+    : '';
+
+  const printHeader = activePerson !== 'all'
+    ? `<div class="print-only" style="display:none;margin-bottom:18px">
+        <div style="font-size:18px;font-weight:800;color:#1A1A1A">GIDF 2026 — Change Guide: ${activePerson}</div>
+        <div style="font-size:12px;color:#555;margin-top:2px">Saturday 2 May 2026 · Shoonya Dance Centre, Ghent · Curated by Swapnil Dagliya / ABC</div>
+      </div>`
+    : '';
+
   return `<div class="sec-title">Change Guide</div>
 <div class="sec-sub">Costume change windows for students performing in multiple acts</div>
-<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;padding:14px 16px;background:#fdf8ff;border-radius:10px;border:1px solid #e8d8f8">
+<div class="no-print" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;padding:14px 16px;background:#fdf8ff;border-radius:10px;border:1px solid #e8d8f8">
   <span style="font-size:12px;font-weight:600;color:#6d28a0;align-self:center;margin-right:4px">Show my schedule:</span>
   ${personBtns}
 </div>
-<div class="alert alert-gold" style="margin-bottom:24px">
+<div class="alert alert-gold no-print" style="margin-bottom:24px">
   ⏱ The golden rule: be in your <strong>next costume and ready backstage 2 acts before</strong> you perform.
   Check the boxes below to find your window. ⚠️ means the change window is very short — plan ahead!
 </div>
+${printBtn}
+${printHeader}
 ${cards}
 <div class="alert alert-purple" style="margin-top:4px">
   Not on this list? If you perform in only one act (or only in Bollyfolk), no costume change is needed.
