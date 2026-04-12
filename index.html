@@ -332,14 +332,39 @@ const PEOPLE = [
     ]
   },
   {
-    name:"Other Bollyfolk",
-    role:"Elena, Punitah, Martine, Pascale, Pauline",
-    color:"#22c55e",
-    note:"Confirmed in Acts 4, 6 & Grand Finale. Heidi, Pauline, Elena, Martine: need to change back into pink & blue skirts before Madhuri Medley (Act 17) \u2014 plenty of time. Pascale: in Ghoomar (Act 4) but NOT Tippani (Act 6) \u2014 Acts 5 & 6 to change into Bhangra costume if applicable.",
+    name:"Elena, Martine, Pauline & Reem",
+    role:"Bollywood 2 + Bollyfolk + Madhuri Medley",
+    color:"#16a34a",
+    note:"3 costume changes. Arrive in pink & blue skirts (Morya Re). Change into Bollyfolk for Acts 4 & 6, then back into pink & blue for Madhuri Medley \u2014 Acts 7\u201316 give plenty of time.",
     acts:[
-      { num:4,  grp:"Bollyfolk \u2014 Ghoomar", costume:"Multicolor mirrorwork", change:null },
-      { num:6,  grp:"Bollyfolk \u2014 Tippani", costume:"Same mirrorwork (Pascale NOT in this act)", change:null, sameAs:4 },
-      { num:18, grp:"Grand Finale",             costume:"Last costume worn (pink & blue or Bollyfolk)", change:null }
+      { num:1,  grp:"Bollywood 2 \u2014 Morya Re",   costume:"Pink & blue layered skirts, multicolor blouses", change:null },
+      { num:4,  grp:"Bollyfolk \u2014 Ghoomar",       costume:"Multicolor mirrorwork", change:{ after:1, window:"Acts 2 (OP1) + 3 (Desihop) \u2014 approx. 6 min", tight:false } },
+      { num:6,  grp:"Bollyfolk \u2014 Tippani",       costume:"Same mirrorwork", change:null, sameAs:4 },
+      { num:17, grp:"Madhuri Dixit Medley",           costume:"Pink & blue layered skirts, multicolor blouses", change:{ after:6, window:"Acts 7\u201316 (10 acts, plenty of time to change back)", tight:false } },
+      { num:18, grp:"Grand Finale",                   costume:"Stay in Madhuri Medley costume", change:null }
+    ]
+  },
+  {
+    name:"Pascale",
+    role:"Bollyfolk Ghoomar + Bhangra (Song 1)",
+    color:"#9333ea",
+    note:"Arrives in Bollyfolk costume for Ghoomar (Act 4). NOT in Tippani (Act 6) \u2014 use Acts 5, 6, 7 & 8 to change into Bhangra. Performs Bhangra Song 1 only.",
+    acts:[
+      { num:4,  grp:"Bollyfolk \u2014 Ghoomar",       costume:"Multicolor mirrorwork", change:null },
+      { num:9,  grp:"Bhangra \u2014 Song 1 only",     costume:"Yellow & green", change:{ after:4, window:"Acts 5 (Manasi) + 6 (Tippani) + 7 (OP2) + 8 (Choli) \u2014 very comfortable", tight:false }, note:"Song 1 only \u2014 exits after first song" },
+      { num:18, grp:"Grand Finale",                   costume:"Stay in Bhangra costume", change:null }
+    ]
+  },
+  {
+    name:"Punithah",
+    role:"Bollyfolk + Semi-Classical",
+    color:"#db2777",
+    note:"Performs in Acts 4, 6 & 12. After Bollyfolk Tippani (Act 6), has Acts 7\u201311 to change into Semi-Classical \u2014 very comfortable window.",
+    acts:[
+      { num:4,  grp:"Bollyfolk \u2014 Ghoomar",                        costume:"Multicolor mirrorwork", change:null },
+      { num:6,  grp:"Bollyfolk \u2014 Tippani",                        costume:"Same mirrorwork", change:null, sameAs:4 },
+      { num:12, grp:"Semi-Classical \u2014 Toda & Kavitt + Saiyaara",  costume:"Orange skirt & dupatta", change:{ after:6, window:"Acts 7, 8, 9, 10 & 11 \u2014 5 acts, very comfortable", tight:false } },
+      { num:18, grp:"Grand Finale",                                     costume:"Stay in Semi-Classical costume", change:null }
     ]
   },
   {
